@@ -1,6 +1,7 @@
 # blog
     nodejs+express+mongodb 搭建具有多人注册、登录、发表文章、登出功能的博客。 
-    样式参照[我的博客](https://toyuanx.github.io/)。
+    （开发中...前端将模仿简书）
+当前样式参照[我的博客](https://toyuanx.github.io/)。
 > 系统：windows 7
 > 工具：nodejs, express, mongodb
     
