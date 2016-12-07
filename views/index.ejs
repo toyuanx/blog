@@ -1,4 +1,6 @@
 <%- include header %>
+<%- include img%>
+<div class="homePage">
 <% posts.forEach(function (post, index) { %>
   <p><h2><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2>
   <a href="/u/<%= post.name %>"><img src="<%= post.head %>" class="r_head" /></a></p>
@@ -28,4 +30,5 @@
   </p>
 <% }) %>
 <%- include paging %>
+</div>
 <%- include footer %>

@@ -1,5 +1,6 @@
 <%- include header %>
-<p>
+<%- include img %>
+<p class="tags">
 <% posts.forEach(function (tag, index) { %>
   <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
 <% }) %>

@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<title>Blog</title>
-<link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= title %> - 原子酱</title>
 
-<header>
-<h1><%= title %></h1>
-</header>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.css">
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	<script src="../javascript/controller.js"></script>
 
-<nav>
-<span><a title="主页" href="/">home</a></span>
-<span><a title="存档" href="/archive">archive</a></span>
-<span><a title="标签" href="/tags">tags</a></span>
-<span><a title="友情链接" href="/links">links</a></span>
-<% if (user) { %>
-  <span><a title="上传" href="/upload">upload</a></span>
-  <span><a title="发表" href="/post">post</a></span>
-  <span><a title="登出" href="/logout">logout</a></span>
-<% } else { %>
-  <span><a title="登录" href="/login">login</a></span>
-  <span><a title="注册" href="/reg">register</a></span>
-<% } %>
-<span><form action="/search" method="GET"><input type="text" name="keyword" placeholder="SEARCH" class="search" /></form></span>
-</nav>
+    </head>
+    <body>
 
-<article>
+	<nav class="site-nav">
+	    <ul id="menu2" class="menu-top">
+		<li class="menu-item menu-item-home menu-item-active" style="opacity: 1; transform: translateY(0px);">
+		    <a href="/" rel="section" title="主页">
+			<i class="menu-item-icon fa fa-fw fa-home"></i>
+			home
+		    </a>
+		</li>
+		<li class="menu-item menu-item-archive " style="opacity: 1; transform: translateY(0px);">
+		    <a title="存档" href="/archive">
+			<i class="menu-item-icon fa fa-fw fa-list"></i>
+			archive
+		    </a>
+		</li>
+		<li class="menu-item menu-item-tags " style="opacity: 1; transform: translateY(0px);">
+		    <a title="标签" href="/tags">
+			<i class="menu-item-icon fa fa-fw fa-tags"></i>
+			tags</a>
+		</li>
+		<li class="menu-item menu-item-links " style="opacity: 1; transform: translateY(0px);">
+		    <a title="友情链接" href="/links">
+			<i class="menu-item-icon fa fa-fw fa-link"></i>
+			links</a>
+		</li>
+		<% if (user) { %>
+		<!--		<li class="menu-item menu-item-links " style="opacity: 1; transform: translateY(0px);">
+				    <a title="上传" href="/upload">
+					<i class="menu-item-icon fa fa-fw fa-upload"></i>
+					upload</a>
+				</li>-->
+		<li class="menu-item menu-item-post " style="opacity: 1; transform: translateY(0px);">
+		    <a title="发表" href="/post">
+			<i class="menu-item-icon fa fa-fw fa-edit"></i>
+			post</a>
+		</li>
+	    </ul>
+	    <ul id="menu3" class="menu-bottom">
+		<li class="menu-item menu-item-search " style="opacity: 1; transform: translateY(0px);">
+		    <form action="/search" method="GET">
+			<i class="menu-item-icon fa fa-fw fa-search"></i>
+			<input type="text" name="keyword" placeholder="SEARCH" class="search" />
+		    </form>
+		</li>
+		<li class="menu-item menu-item-logout " style="opacity: 1; transform: translateY(0px);">
+		    <a title="登出" href="/logout">
+			<i class="menu-item-icon fa fa-fw fa-sign-out"></i>
+			logout</a>
+		</li>
+	    </ul>
+	    <% } else { %>
+	    <ul id="menu3" class="menu-bottom">
+		<li class="menu-item menu-item-login " style="opacity: 1; transform: translateY(0px);">
+		    <a title="登录" href="/login">
+			<i class="menu-item-icon fa fa-fw fa-sign-in"></i>
+			login</a>
+		</li>
+		<li class="menu-item menu-item-register " style="opacity: 1; transform: translateY(0px);">
+		    <a title="注册" href="/reg">
+			<i class="menu-item-icon fa fa-fw fa-user"></i>
+			register</a>
+		</li>
+		<% } %>
+	    </ul>
+	</nav>
 
-<% if (success) { %>
-  <div><%= success %></div>
-<% } %>
-<% if (error) { %>
-  <div><%= error %> </div>
-<% } %>
+	<article>
+
+	    <% if (success) { %>
+	    <div><%= success %></div>
+	    <% } %>
+	    <% if (error) { %>
+	    <div><%= error %> </div>
+	    <% } %>

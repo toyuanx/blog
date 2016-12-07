@@ -1,25 +1,177 @@
-/* inspired by http://yihui.name/cn/ */
-*{padding:0;margin:0;}
-body{width:600px;margin:2em auto;padding:0 2em;font-size:14px;font-family:"Microsoft YaHei";}
-p{line-height:24px;margin:1em 0;}
-header{padding:.5em 0;border-bottom:1px solid #ccc;}
-nav{float:left;font-family:"Microsoft YaHei";font-size:1.1em;text-transform:uppercase;margin-left:-12em;width:9em;text-align:right;}
-nav a{display:block;text-decoration:none;padding:.7em 1em;color:#000;}
-nav a:hover{background-color:#f00;color:#f9f9f9;-webkit-transition:color .2s linear;}
-article{font-size:16px;padding-top:.5em;}
-article a{color:#d00;text-decoration:none;}
-article a:hover{color:#333;text-decoration:underline;}
 .info{font-size:14px;}
 .edit{margin:3px;padding:2px 5px;border-radius:3px;background-color:#f3f3f3;color:#333;font-size:13px;}
 .edit:hover{text-decoration:none;background-color:#f00;color:#fff;-webkit-transition:color .2s linear;}
 .prepage a{float:left;text-decoration:none;padding:.5em 1em;color:#f00;font-weight:bold;}
 .nextpage a{float:right;text-decoration:none;padding:.5em 1em;color:#f00;font-weight:bold;}
 .prepage a:hover,.nextpage a:hover{text-decoration:none;background-color:#f00;color:#f9f9f9;-webkit-transition:color .2s linear;}
-.archive{list-style:none;line-height:28px;}
-.archive h3{margin:0.5em 0;}
-.archive time{float:left;font-size:14px;color:#999999;margin-right:1.2em;}
 .tag{background-color:#ff0000;border-radius:3px;font-size:14px;color:#ffffff;display:inline-block;padding:0 5px;margin-bottom:8px;}
 .tag:hover{text-decoration:none;background-color:#ffffff;color:#000000;-webkit-transition:color .2s linear;}
-.search{border:0;width:6em;text-align:center;font-size:1em;margin:0.5em 0;}
+/*.search{border:0;width:6em;text-align:center;font-size:1em;margin:0.5em 0;}*/
 .l_head{float:left;margin-left:-4em;box-shadow:0px 1px 4px #888;}
 .r_head{float:right;margin-top:-2.5em;box-shadow:0px 1px 4px #888;}
+
+/*header*/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: "Microsoft YaHei,Helvetica,Arial,sans-serif";
+}
+
+nav{
+    float: left;
+    font-family: "Microsoft YaHei,Helvetica,Arial,sans-serif";
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-left: 0em;
+    width:8.8em;
+    text-align: right;
+    background: #2a2a2a none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+    position:fixed;
+    z-index: 1049;
+    overflow: visible;
+}
+
+nav a, nav form{
+    display:block;
+    text-decoration:none;
+    padding:.7em 1em;
+    text-align: left;
+}
+
+nav a:hover{
+    background-color:#f49484;
+    color:white;
+    text-shadow: 0 1px 0 #de533a;
+    text-decoration:none;
+    -webkit-transition:color .2s linear;
+}
+
+nav form{
+    padding: .7em .9em;
+}
+
+.menu-item {
+    list-style: none;
+    float: left;
+    width: 100%;
+}
+
+.menu-item a,.menu-item form{
+    color: #999999;
+}
+
+.search{
+    border:0;
+    width:6em;
+    font-size:0.9em;
+    text-align: center;
+    border-radius: 1em;
+}
+
+.menu-bottom{
+    position: absolute;
+    bottom: .1em;
+}
+
+.menu-item-active a{
+    background-color:#e78170;
+    color:white;
+    text-shadow: 0 1px 0 #de533a;
+}
+
+/*图片侧栏*/
+.intorduction{
+    height: 100%;
+    width: 24%;
+    /*background: url("../images/img4.jpg") no-repeat;*/
+    bottom: 0;
+    color: white;
+    left: 9.7em;
+    position: absolute;
+}
+.img{
+    width: 126%;
+    height: 100%;
+    position: absolute;
+    z-index: -1039;
+}
+.intro{
+    bottom: 0;
+    padding: 2em;
+    position: absolute;
+}
+
+.intro h1{
+    font-size: 38.5px;
+}
+.intro h1,.intro h3{
+    text-shadow: -1px 0 0 rgba(0, 0, 0, 0.75);
+    line-height: 40px;
+    font-weight: bold;
+}
+#write-button{
+    background-image:  url("../images/jianshu.png");
+    background-position: -106px -23px;
+    background-repeat: no-repeat;
+    background-size: 250px auto;
+    padding-left: 34px;
+    color: white;
+}
+.header{
+    padding:.5em 0;
+    border-bottom:1px solid #ccc;
+    position: fixed;
+    left: 35%;
+    color: #555555;
+}
+/*文章内容页*/
+article{
+    height: 100%;
+    width: 83%;
+    bottom: 0;
+    color: white;
+    position: absolute;
+    z-index: 1029;
+    /*right: 10em;*/
+}
+
+article a{
+    color:#d00;
+    text-decoration:none;
+}
+
+article a:hover{
+    color:#333;
+    text-decoration:underline;
+}
+
+/*存档页*/
+.archive, .homePage, .tags, .links{
+    list-style:none;
+    line-height:28px;
+    position: absolute;
+    left: 42.5%;
+    color: #555555;
+}
+.archive h3{
+    margin:0.5em 0;
+}
+.archive time{
+    float:left;
+    font-size:14px;
+    color:#999999;
+    margin-right:1.2em;
+}
+
+/*主页*/
